@@ -24,11 +24,11 @@ x_data <- rbind(x_train,x_test)
 y_data <- rbind(y_train,y_test)
 subjects_data <- rbind(subject_train,subject_test)
 
-data <- cbind(subjects_data,x_data,y_data)
+data <- cbind(subjects_data,y_data,x_data)
 
 #2. Filter measurements on the mean and std
 
-filtered <- select(data,subjects,id,contains("std"),contains("mean"))
+filtered <- select(data,subjects,id,contains("mean"),contains("std"))
 
 #3. Activity names applied to filtered data
 
